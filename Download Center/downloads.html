@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SomeGuy's Download Center</title>
+    <meta content="someguy.exe" property="og:title" />
+    <meta content="SomeGuys, Download Center you will find Windows OSes, linux, mac os browsers utlites and development tools." property="og:description" />
+    <meta content="https://www.someguy154.github.io/SomeGuy/downloads/downloads.html" property="og:url" />
+    <meta content="https://www.nyan.cat/cats/original.gif" property="og:image" />
+    <meta content="#00008b" data-react-helmet="true" name="theme-color" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a1930 0%, #040812 100%);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .nav-container {
+            background: rgba(13, 20, 36, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #4a9eff;
+            text-shadow: 0 0 10px rgba(74, 158, 255, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px 40px;
+        }
+
+        .download-section {
+            background: rgba(13, 20, 36, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .download-section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #4a9eff;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        select:hover {
+            border-color: #4a9eff;
+        }
+
+        select option {
+            background: #0a1930;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .download-button {
+            background: linear-gradient(45deg, #4a9eff, #3a8eef);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(74, 158, 255, 0.2);
+        }
+
+        .download-button:hover {
+            background: linear-gradient(45deg, #3a8eef, #2a7edf);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(74, 158, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 80px 15px 20px;
+            }
+
+            .download-section {
+                padding: 1.5rem;
+            }
+
+            .download-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <nav>
+            <div class="logo">SomeGuy's Download Center</div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="download-section">
+            <h2>Operating Systems</h2>
+            <select id="os-select">
+                <option value="">Select an Operating System</option>
+                <option value="https://ia904501.us.archive.org/6/items/WINDOWS-95-ISO/Windows%2095.iso">Windows 95</option>
+                <option value="https://ia904708.us.archive.org/19/items/windows-98-microsoft-windows-98-upgrade-f-26-vj-pzrwx-cqdjf-7-t-339-wqhfm/Windows%2098%20-%20Microsoft%20Windows%2098%20Upgrade%20F26VJ-PZRWX-CQDJF-7T339-WQHFM.iso">Windows 98 SE</option>
+                <option value="https://archive.org/download/windows-me_202109/Windows%20ME.iso">Windows ME</option>
+                <option value="https://archive.org/download/windows-2000_20220817/Windows%202000%20Professional%20with%20SP4%20%5BTurkish%5D%20%28ISO%29.iso">Windows 2000</option>
+                <option value="https://ia600602.us.archive.org/0/items/WinXPSP3ENGISO/en_windows_xp_service_pack_3_x86_cd_x14-60489.iso">Windows XP</option>
+                <option value="https://archive.org/download/WinVistaEnterpriseSP2x64/en_windows_vista_enterprise_sp2_x64_dvd_342332.iso">Windows Vista</option>
+                <option value="https://ia904706.us.archive.org/31/items/windows-7-sp1-aio-x64-fully-updated/en_windows_7_sp1_aio_updated_2020_x64.iso">Windows 7 (AIO) All Editions</option>
+                <option value="https://ia601405.us.archive.org/19/items/en-windows-8/en-windows-8.iso">Windows 8.0</option>
+                <option value="https://archive.org/download/windows-8.1_202108/Windows%208.1.iso">Windows 8.1</option>
+                <option value="https://archive.org/download/windows-10_20230228/Windows%2010.iso">Windows 10</option>
+                <option value="https://archive.org/download/windows-11_20210626/windows%2011.iso">Windows 11</option>
+                <option value="https://archive.org/download/install-mac-os-big-sur.app11.2.1/Install%20macOS%20Big%20Sur.app.zip">macOS Big Sur</option>
+                <option value="https://archive.org/download/macOS_Monterey_12_6_1/macOS_Monterey_12_6_1.iso">macOS Monterey</option>
+                <option value="https://archive.org/download/mac-os-ventura-13.0/Install%20macOS%20Ventura%2013.0_22A380.iso">macOS Ventura</option>
+                <option value="https://archive.org/download/install-mac-os-mojave/Install%20macOS%20Mojave.zip">macOS Mojave</option>
+                <option value="https://archive.org/download/mac-os-catalina-iso-10.15.7/MacOS%20Catalina%20ISO%2010.15.7.iso">macOS Catalina</option>
+                <option value="https://archive.org/download/ubuntu-14.04.2/Ubuntu%2014.04.2.ISO">Ubuntu</option>
+                <option value="https://archive.org/download/fedora-budgie-live-x-86-64-rawhide-20230201.n.-0/Fedora-Budgie-Live-x86_64-Rawhide-20230201.n.0.iso">Fedora</option>
+                <option value="https://archive.org/download/debian-2.1r4/debian-2.1r4-source-CD2.iso">Debian</option>
+                <option value="https://mirror.arizona.edu/archlinux/iso/2024.10.01/archlinux-2024.10.01-x86_64.iso">Arch Linux</option>
+                <option value="https://download.opensuse.org/distribution/leap/15.4/iso/openSUSE-Leap-15.4-DVD-x86_64-Current.iso">openSUSE</option>
+                <option value="https://downloads.kali.org/kali-linux-2023.2/kali-linux-2023.2-installer-amd64.iso">Kali Linux</option>
+            </select>
+            <a class="download-button" href="#" onclick="downloadSoftware('os-select')">Download OS</a>
+        </div>
+
+        <div class="download-section">
+            <h2>Web Browsers</h2>
+            <select id="browsers-select">
+                <option value="">Select a Browser</option>
+                <option value="https://dl.google.com/chrome/install/googlechromestandaloneenterprise64.msi">Google Chrome</option>
+                <option value="https://download-installer.cdn.mozilla.net/pub/firefox/releases/117.0/win64/en-US/Firefox%20Setup%20117.0.exe">Mozilla Firefox</option>
+                <option value="https://laptop-updates.brave.com/latest/winx64">Brave Browser</option>
+            </select>
+            <a class="download-button" href="#" onclick="downloadSoftware('browsers-select')">Download Browser</a>
+        </div>
+
+        <div class="download-section">
+            <h2>Gaming & Development Tools</h2>
+            <select id="devtools-select">
+                <option value="">Select a Development Tool</option>
+                <option value="https://public-cdn.cloud.unity3d.com/hub/prod/UnityHubSetup.exe">Unity</option>
+              <option value="https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncherInstaller.msi?productName=unrealEngine">Unreal Engine</option>
+               <option value="https://setup.rbxcdn.com/RobloxStudioInstaller.exe">Roblox Studio</option>
+              <option value="https://www.python.org/downloads/release/python-3130/">Python</option>
+                <option value="https://aka.ms/vs/17/release/vs_installer.exe">Visual Studio 2022</option>
+                <option value="https://update.code.visualstudio.com/latest/win32-x64/stable">VS Code for Windows</option>
+                <option value="https://update.code.visualstudio.com/latest/linux-deb-x64/stable">VS Code for Linux (Debian/Ubuntu)</option>
+                <option value="https://update.code.visualstudio.com/latest/darwin/stable">VS Code for macOS</option>
+            </select>
+            <a class="download-button" href="#" onclick="downloadSoftware('devtools-select')">Download Tool</a>
+        </div>
+
+        <div class="download-section">
+            <h2>🔧 Useful Software</h2>
+            <select id="useful-software-select">
+                <option value="">Select Software</option>
+                <option value="https://ftp.gimp.org/pub/gimp/v2.10/windows/gimp-2.10.30-setup.exe">GIMP</option>
+                <option value="https://download.blender.org/release/Blender3.5/blender-3.5.0-windows-x64.msi">Blender</option>
+                <option value="https://www.7-zip.org/a/7z2107-x64.exe">7-Zip</option>
+            </select>
+            <a class="download-button" href="#" onclick="downloadSoftware('useful-software-select')">Download Software</a>
+        </div>
+    </div>
+
+    <script>
+        function downloadSoftware(selectId) {
+            const selectElement = document.getElementById(selectId);
+            const selectedValue = selectElement.value;
+            if (selectedValue) {
+                window.open(selectedValue, '_blank');
+            } else {
+                alert('Please select an item to download');
+            }
+        }
+    </script>
+</body>
+</html>
